@@ -1,4 +1,4 @@
-## Nova Dependent Filter :rocket:
+## Nova Dependent Filter
 [![Latest Version on Github](https://img.shields.io/packagist/v/dkulyk/nova-dependent-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-dependent-filter)
 [![Total Downloads](https://img.shields.io/packagist/dt/dkulyk/nova-dependent-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-dependent-filter)
 [![Become a Patron!](https://img.shields.io/badge/become-a_patron!-red.svg?logo=patreon&style=flat)](https://www.patreon.com/bePatron?u=16285116)
