@@ -83,7 +83,7 @@ class CategoryFilter extends DependentFilter
      */
     public $attribute = 'ctaegory_uid';
     
-    public function options(Request $request, array $filters)
+    public function options(Request $request, array $filters = [])
     {
         return Category::pluck('title', 'id');
     } 
@@ -156,7 +156,7 @@ class CityFilter extends DependentFilter
 {
     public $dpendentOf = ['state_id'];
     
-    function options(Request $request, $filters)
+    function options(Request $request, $filters = [])
     {
         return City::where('state_id', $filters['state_id'])
             ->pluck('title', 'id');
@@ -167,7 +167,7 @@ class CityFilter extends DependentFilter
 If you want to show options only when main filter is selected you can use `when` for check it:
 
 ```php
-function options(Request $request, $filters) {
+function options(Request $request, $filters = []) {
     return City::when($filters['state_id'], function ($query, $value) {
         $query->where('state_id', $value)
     })->pluck('title', 'id');
