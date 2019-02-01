@@ -1,0 +1,31 @@
+{
+    "name": "dkulyk/nova-dependent-filter",
+    "description": "Dependent filters for Laravel Nova",
+    "authors": [
+        {
+            "name": "Dmytro Kulyk",
+            "email": "lnkvisitor.ts@gmail.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "nova",
+        "filter"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DKulyk\\Nova\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DKulyk\\Nova\\DependentFilterServiceProvider"
+            ]
+        }
+    }
+}
