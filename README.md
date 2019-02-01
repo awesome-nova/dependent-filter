@@ -1,14 +1,14 @@
 ## Nova Dependent Filter :rocket:
-[![Latest Version on Github](https://img.shields.io/packagist/v/dkulyk/nova-related-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-related-filter)
-[![Total Downloads](https://img.shields.io/packagist/dt/dkulyk/nova-related-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-related-filter)
+[![Latest Version on Github](https://img.shields.io/packagist/v/dkulyk/nova-dependent-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-dependent-filter)
+[![Total Downloads](https://img.shields.io/packagist/dt/dkulyk/nova-dependent-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-dependent-filter)
 [![Become a Patron!](https://img.shields.io/badge/become-a_patron!-red.svg?logo=patreon&style=flat)](https://www.patreon.com/bePatron?u=16285116)
 
 1. [Installation](#user-content-installation)
 2. [Usage](#user-content-usage)
     1. [Declaration](#user-content-declaration)
     2. [Class declaration](#user-content-class-declaration)
-    3. [Static relations](#user-content-static-relations)
-    4. [Dynamic relations](#user-content-dynamic-relations)
+    3. [Static dependencies](#user-content-static-dependencies)
+    4. [Dynamic dependencies](#user-content-dynamic-dependencies)
     5. [Hiding empty filters](#user-content-hiding-empty-filters)
     6. [Default filter value](#user-content-default-filter-value)
     7. [Other stuffs](#user-content-other-stuffs)
@@ -44,7 +44,7 @@ function filters(Request $request)
 }
 ```
 
-Also you can use `RelatedFilter::make()` instead `new RelatedFilter()`.
+Also you can use `DependentFilter::make()` instead `new DependentFilter()`.
 
 For queries you need to use callback declaration:
 
@@ -101,9 +101,9 @@ function filters(Request $request)
 }
 ```
 
-### Static relations
+### Static dependencies
 
-For creating related filter you need to specify related filter's values at which the option will be shown: 
+For creating dependent filter you need to specify dependent filters values at which the option will be shown:
 
 ```php
 function filters(Request $request)
@@ -127,9 +127,9 @@ function filters(Request $request)
 }
 ```
 
-> Note. Instead of an attribute or class name, you must specify the key of the related filter.
+> Note. Instead of an attribute or class name, you must specify the key of the filter.
 
-### Dynamic relations
+### Dynamic dependencies
 
 For big collection of data you can use dynamic updating of the filter.
 
@@ -149,7 +149,7 @@ function filters(Request $request)
 }
 ```
 
-In class declaration you also need to set `$related` property: 
+In class declaration you also need to set `$dpendentOf` property: 
 
 ```php
 class CityFilter extends DependentFilter
@@ -164,7 +164,7 @@ class CityFilter extends DependentFilter
 }
 ```
 
-If you want to show options only when related filter is selected you can use `when` for check it:
+If you want to show options only when main filter is selected you can use `when` for check it:
 
 ```php
 function options(Request $request, $filters) {
@@ -213,7 +213,7 @@ function filters(Request $request) {
 ```
 
 ```php
-class StateFilter extends RelatedFilter
+class StateFilter extends DependentFilter
 {
     public function default()
     {
@@ -228,7 +228,7 @@ class StateFilter extends RelatedFilter
 By default filter checking by equal filed specified in `$attribute` and filter value. You can overload it like as in Nova filters:
 
 ```php
-class MyFilter extends RelatedFilter
+class MyFilter extends DependentFilter
 {
     public function apply(Request $request, $query, $value)
     {
