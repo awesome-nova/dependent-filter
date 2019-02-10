@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace DKulyk\Nova;
+namespace AwesomeNova\Filters;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -39,7 +39,7 @@ class DependentFilter extends Filter
     /**
      * @var string
      */
-    public $component = 'dkulyk-dependent-filter';
+    public $component = 'awesome-nova-dependent-filter';
 
     /**
      * RelatedFilter constructor.

@@ -1,6 +1,6 @@
 <?php
 
-namespace DKulyk\Nova\Http\Controllers;
+namespace AwesomeNova\Http\Controllers;
 
 use Laravel\Nova\Http\Requests\LensRequest;
 

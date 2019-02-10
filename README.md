@@ -1,6 +1,6 @@
 ## Nova Dependent Filter
-[![Latest Version on Github](https://img.shields.io/packagist/v/dkulyk/nova-dependent-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-dependent-filter)
-[![Total Downloads](https://img.shields.io/packagist/dt/dkulyk/nova-dependent-filter.svg?style=flat)](https://packagist.org/packages/dkulyk/nova-dependent-filter)
+[![Latest Version on Github](https://img.shields.io/packagist/v/awesome-nova/dependent-filter.svg?style=flat)](https://packagist.org/packages/awesome-nova/dependent-filter)
+[![Total Downloads](https://img.shields.io/packagist/dt/awesome-nova/dependent-filter.svg?style=flat)](https://packagist.org/packages/awesome-nova/dependent-filter)
 [![Become a Patron!](https://img.shields.io/badge/become-a_patron!-red.svg?logo=patreon&style=flat)](https://www.patreon.com/bePatron?u=16285116)
 
 1. [Installation](#user-content-installation)
@@ -19,7 +19,7 @@
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```sh
-composer require dkulyk/nova-dependent-filter
+composer require awesome-nova/dependent-filter
 ```
 
 ## Usage

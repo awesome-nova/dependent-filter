@@ -1,10 +1,10 @@
 <?php
 
-namespace DKulyk\Nova;
+namespace AwesomeNova;
 
-use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,7 +18,7 @@ class DependentFilterServiceProvider extends ServiceProvider
     public function boot()
     {
         Event::listen(ServingNova::class, function () {
-            Nova::script('dkulyk-dependent-filter', dirname(__DIR__) . '/dist/js/filter.js');
+            Nova::script('awesome-nova-dependent-filter', dirname(__DIR__) . '/dist/js/filter.js');
         });
 
         Route::group($this->routeConfiguration(), function () {
@@ -34,7 +34,7 @@ class DependentFilterServiceProvider extends ServiceProvider
     protected function routeConfiguration()
     {
         return [
-            'namespace' => 'DKulyk\Nova\Http\Controllers',
+            'namespace' => 'AwesomeNova\Http\Controllers',
             'domain' => config('nova.domain', null),
             'as' => 'nova.api.',
             'prefix' => 'nova-api',

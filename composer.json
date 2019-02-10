@@ -1,5 +1,5 @@
 {
-    "name": "dkulyk/nova-dependent-filter",
+    "name": "awesome-nova/dependent-filter",
     "description": "Dependent filters for Laravel Nova",
     "authors": [
         {
@@ -18,13 +18,13 @@
     },
     "autoload": {
         "psr-4": {
-            "DKulyk\\Nova\\": "src/"
+            "AwesomeNova\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "DKulyk\\Nova\\DependentFilterServiceProvider"
+                "AwesomeNova\\DependentFilterServiceProvider"
             ]
         }
     }
