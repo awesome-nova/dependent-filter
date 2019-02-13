@@ -237,6 +237,19 @@ class MyFilter extends DependentFilter
 }
 ```
 
+When you use declare style you can set pass apply callback to `withApply` method:
+```php
+function filters(Request $request) {
+    return [
+        StateFilter::make('State', 'code')->withApply(function ($request, $query, $value) {
+            return $query->where('code', '=', $value);
+        }),
+    ];
+}
+
+```
+ 
+
 Also you can specify another filter key over method `key`.
 
 

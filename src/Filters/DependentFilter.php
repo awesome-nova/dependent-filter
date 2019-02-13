@@ -10,9 +10,14 @@ use Laravel\Nova\Filters\Filter;
 class DependentFilter extends Filter
 {
     /**
-     * @var callable
+     * @var callable|null
      */
-    public $optionsCallback;
+    protected $optionsCallback;
+
+    /**
+     * @var callable|null
+     */
+    protected $applyCallback;
 
     /**
      * @var string[]
@@ -62,6 +67,10 @@ class DependentFilter extends Filter
      */
     public function apply(Request $request, $query, $value)
     {
+        if ($this->applyCallback) {
+            return call_user_func($this->applyCallback, $request, $query, $value);
+        }
+
         return $query->whereIn($this->attribute, (array)$value);
     }
 
@@ -135,6 +144,18 @@ class DependentFilter extends Filter
             $this->dependentOf($dependentOf);
         }
 
+        return $this;
+    }
+
+    /**
+     * Set callback for apply method.
+     *
+     * @param  callable $callback
+     * @return $this
+     */
+    final public function withApply(callable $callback)
+    {
+        $this->applyCallback = $callback;
         return $this;
     }
 
