@@ -148,6 +148,29 @@ class DependentFilter extends Filter
     }
 
     /**
+     * Set the default value for the filter.
+     *
+     * @param  mixed|array $value
+     * @return $this
+     */
+    final public function withDefault($value)
+    {
+        $this->default = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get the default options for the filter.
+     *
+     * @return array|mixed
+     */
+    public function default()
+    {
+        return $this->default;
+    }
+
+    /**
      * Set callback for apply method.
      *
      * @param  callable $callback
