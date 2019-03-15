@@ -3,6 +3,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/awesome-nova/dependent-filter.svg?style=flat)](https://packagist.org/packages/awesome-nova/dependent-filter)
 [![Become a Patron!](https://img.shields.io/badge/become-a_patron!-red.svg?logo=patreon&style=flat)](https://www.patreon.com/bePatron?u=16285116)
 
+This package provides filters what depends of another filters.
+
 1. [Installation](#user-content-installation)
 2. [Usage](#user-content-usage)
     1. [Declaration](#user-content-declaration)
