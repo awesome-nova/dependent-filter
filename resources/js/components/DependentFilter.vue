@@ -12,7 +12,7 @@
                     :label="optionValue"
                     :selected="value"
             >
-                <option value="" selected>&mdash;</option>
+                <option v-if="!filter.disableEmptyOption" value="" selected>&mdash;</option>
             </select-control>
         </div>
     </div>

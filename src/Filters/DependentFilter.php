@@ -42,6 +42,11 @@ class DependentFilter extends Filter
     public $hideWhenEmpty = false;
 
     /**
+     * @var bool
+     */
+    public $disableEmptyOption = false;
+
+    /**
      * @var string
      */
     public $component = 'awesome-nova-dependent-filter';
@@ -194,6 +199,17 @@ class DependentFilter extends Filter
     }
 
     /**
+     * @param  bool $value
+     * @return $this
+     */
+    public function disableEmptyOption($value = false)
+    {
+        $this->disableEmptyOption = $value;
+
+        return $this;
+    }
+
+    /**
      * Prepare the filter for JSON serialization.
      *
      * @return array
@@ -208,6 +224,7 @@ class DependentFilter extends Filter
             'currentValue' => $this->default() ?? '',
             'dependentOf' => $this->dependentOf,
             'hideWhenEmpty' => $this->hideWhenEmpty,
+            'disableEmptyOption' => $this->disableEmptyOption
         ], $this->meta());
     }
 
