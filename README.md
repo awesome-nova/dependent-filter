@@ -142,7 +142,7 @@ function filters(Request $request)
         StateFilter::make('State', 'state_id'),
         
         DependentFilter::make('City', 'city_id')
-            ->dpendentOf('state_id')
+            ->dependentOf('state_id')
             ->withOptions(function (Request $request, $filters) {
                 return City::where('state_id', $filters['state_id'])
                     ->pluck('title', 'id');
@@ -151,12 +151,12 @@ function filters(Request $request)
 }
 ```
 
-In class declaration you also need to set `$dpendentOf` property: 
+In class declaration you also need to set `$dependentOf` property: 
 
 ```php
 class CityFilter extends DependentFilter
 {
-    public $dpendentOf = ['state_id'];
+    public $dependentOf = ['state_id'];
     
     function options(Request $request, $filters = [])
     {
