@@ -100,6 +100,12 @@
                 if (!this.loading && this.value !== '' && options.filter(option => option.value == this.value).length === 0 ) {
                     this.handleChange('')
                 }
+
+                this.$emit('options-changed', {
+                    "class" : this.filterKey,
+                    'options': options
+                })
+
                 return options
             },
         },
