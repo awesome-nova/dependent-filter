@@ -12,7 +12,7 @@
                     :label="optionValue"
                     :selected="value"
             >
-                <option value="" selected>&mdash;</option>
+                <option v-if="!filter.disableEmptyOption" value="" selected>&mdash;</option>
             </select-control>
         </div>
     </div>
@@ -100,6 +100,12 @@
                 if (!this.loading && this.value !== '' && options.filter(option => option.value == this.value).length === 0 ) {
                     this.handleChange('')
                 }
+
+                this.$emit('options-changed', {
+                    "class" : this.filterKey,
+                    'options': options
+                })
+
                 return options
             },
         },
