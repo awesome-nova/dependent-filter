@@ -198,7 +198,7 @@ class DependentFilter extends Filter
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return array_merge([
             'class' => $this->key(),
