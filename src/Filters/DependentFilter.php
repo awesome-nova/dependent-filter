@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace AwesomeNova\Filters;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Laravel\Nova\Filters\Filter;
 
@@ -60,10 +62,10 @@ class DependentFilter extends Filter
     /**
      * Apply the filter to the given query.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Illuminate\Database\Eloquent\Builder $query
-     * @param  mixed $value
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param Request $request
+     * @param Builder $query
+     * @param mixed $value
+     * @return Builder
      */
     public function apply(Request $request, $query, $value)
     {
@@ -87,9 +89,9 @@ class DependentFilter extends Filter
     /**
      * Get the filter's available options.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  array $filters
-     * @return array|\Illuminate\Support\Collection
+     * @param Request $request
+     * @param array $filters
+     * @return array|Collection
      */
     public function options(Request $request, array $filters = [])
     {
@@ -112,8 +114,8 @@ class DependentFilter extends Filter
     }
 
     /**
-     * @param  \Illuminate\Http\Request $request
-     * @param  array $filters
+     * @param Request $request
+     * @param array $filters
      * @return array
      */
     final public function getOptions(Request $request, array $filters = [])
